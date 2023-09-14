@@ -20,45 +20,6 @@ public class Superhero {
         this.creationYear = creationYear;
         this.specialPower = specialPower;
     }
-
-    //Konstruktør 2
-    public Superhero(
-            String superName,
-            String civilName,
-            double powerLevel,
-            int creationYear)
-    {
-        this.superName = superName;
-        this.civilName = civilName;
-        this.powerLevel = powerLevel;
-        this.creationYear = creationYear;
-    }
-/*/Hero Exambles
-    Superhero super1 = new Superhero(
-            "Blanket Lord",
-            "Lars Larsen",
-            "Har altid et godt tilbud til dig",
-            1959,
-            9.99);
-    Superhero super2 = new Superhero(
-            "DJ Blyatman",
-            "Stanislav Bodkovich",
-            "Russian Hardbass",
-            1993,
-            420);
-    Superhero super3= new Superhero(
-            "Johnny Bravo",
-            "John Bravo",
-            "Tiltproof",
-            1970,
-            500);
-    Superhero super4 = new Superhero(
-            "Bodega Bent",
-            "Bent Børge Bumsen",
-            "Kan drikke 80 øl på i hvert fald et par timer",
-            1954,
-            14);
-*/
     //Get metoder
 
     public String getSuperName() {
@@ -103,8 +64,9 @@ public class Superhero {
             String string = "";
             string += "Superhelte navn: " + superName + '\n';
             string += "Civil navn: " + civilName + '\n';
-            string += "Powerlevel: " + powerLevel + '\n';
+            string += "Specielle evner: " + specialPower + '\n';
             string += "Oprindelsesår: " + creationYear + '\n';
+            string += "Powerlevel: " + powerLevel + '\n' + '\n' + '\n';
             return string;
     }
 

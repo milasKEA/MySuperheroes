@@ -2,25 +2,37 @@ import java.util.ArrayList;
 
 public class Database {
 
-    private ArrayList <Superhero> heroList = new ArrayList();
+    private final ArrayList<Superhero> heroList = new ArrayList<>();
 
-    public void addSuperhero(
-                             String superName,
-                             String civilName,
-                             double powerLevel,
-                             int creationYear) {
+    public void addSuperhero
+            (Superhero superhero) {
+        heroList.add(superhero);
+    }
 
-        heroList.add
-                (new Superhero(
-                superName,
-                civilName,
-                powerLevel,
-                creationYear));
+    public void addRandomHero(Superhero heroPrint) {
+        heroList.add(new Superhero(
+                heroPrint.getSuperName(),
+                heroPrint.getCivilName(),
+                heroPrint.getSpecialPower(),
+                heroPrint.getCreationYear(),
+                heroPrint.getPowerLevel()));
     }
 
     public ArrayList<Superhero> getHeroList() {
         return heroList;
     }
+
+    public ArrayList<String> findSuperhero(String superHeroName) {
+        ArrayList<String> superheroes = new ArrayList<>();
+
+        for (Superhero superhero : heroList) {
+            if (superhero.getSuperName().toLowerCase().contains(superHeroName.toLowerCase())) {
+
+                if (!superHeroName.contains(superhero.getSuperName())) {
+                    superheroes.add(superhero.getSuperName());
+                }
+            }
+        }
+        return superheroes;
+    }
 }
-
-
