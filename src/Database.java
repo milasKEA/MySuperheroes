@@ -22,14 +22,14 @@ public class Database {
         return heroList;
     }
 
-    public ArrayList<String> findSuperhero(String superHeroName) {
-        ArrayList<String> superheroes = new ArrayList<>();
+    public ArrayList<Superhero> findSuperhero(String superHeroName) {
+        ArrayList<Superhero> superheroes = new ArrayList<>();
 
         for (Superhero superhero : heroList) {
             if (superhero.getSuperName().toLowerCase().contains(superHeroName.toLowerCase())) {
 
                 if (!superHeroName.contains(superhero.getSuperName())) {
-                    superheroes.add(superhero.getSuperName());
+                    superheroes.add(superhero);
                 }
             }
         }
