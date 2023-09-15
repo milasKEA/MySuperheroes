@@ -52,6 +52,10 @@ public class Superhero {
         this.civilName = civilName;
     }
 
+    public void setSpecialPower(String specialPower) {
+        this.specialPower = specialPower;
+    }
+
     public void setPowerLevel(double powerLevel) {
         this.powerLevel = powerLevel;
     }

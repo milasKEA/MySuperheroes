@@ -27,7 +27,6 @@ public class Database {
 
         for (Superhero superhero : heroList) {
             if (superhero.getSuperName().toLowerCase().contains(superHeroName.toLowerCase())) {
-
                 if (!superHeroName.contains(superhero.getSuperName())) {
                     superheroes.add(superhero);
                 }

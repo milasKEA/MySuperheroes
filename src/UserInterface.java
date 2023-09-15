@@ -1,3 +1,175 @@
+import java.io.InputStream;
+import java.util.Scanner;
+import java.util.ArrayList;
 public class UserInterface {
+    //Loop fra start til slut
+    public void startProgram() {
 
+        String kør = "y";
+        Database database = new Database();
+        Scanner scanner = new Scanner(System.in);
+        printStartMessage();
+        while (kør.equalsIgnoreCase("y")) {
+            System.out.println("Tryk 1 for at tilføje endnu en helt.");
+            System.out.println("Tryk 2 for at se alle dine superhelte.");
+            System.out.println("Tryk 3 for at tilføje 4 random helte.");
+            System.out.println("Tryk 5 for at søge efter superhelte");
+            System.out.println("Tryk 9 for at afslutte programmet.");
+
+            //Opret ny Superhero
+            int input = scanner.nextInt();
+            if (input == 1) {
+
+                System.out.println("Indtast superheltens navn: ");
+                String getFucked = scanner.nextLine();
+                String mySuperName = scanner.nextLine();
+                System.out.println("Hvad er din helts civile navn?");
+                String myCivilName = scanner.nextLine();
+                System.out.println("Hvad er din helts superkraft?");
+                String mySuperPower = scanner.nextLine();
+                System.out.println("Hvilket år blev din helt skabt?");
+                int myCreationYear = scanner.nextInt();
+                System.out.println("Hvad er din helts powerlevel?");
+                double myPowerLevel = scanner.nextDouble();
+
+                Superhero mySuperHero = new Superhero(mySuperName, myCivilName, mySuperPower, myCreationYear, myPowerLevel);
+                database.addSuperhero(mySuperHero);
+
+                System.out.println("Din helts information: " + '\n' + mySuperHero);
+
+                System.out.println("Vil du tilbage til menuen? (y/n)");
+                kør = scanner.next();
+            }
+            //Print ArrayList over alle Superhelte
+            if (input == 2) {
+                System.out.println(database.getHeroList());
+                System.out.println("Vil du tilbage til menuen? (y/n)");
+                kør = scanner.next();
+            }
+            //Tilføj 4 random Superhelte (not really random)
+            if (input == 3) {
+                Superhero super1 = new Superhero(
+                        "Blanket Lord",
+                        "Lars Larsen",
+                        "Har altid et godt tilbud til dig",
+                        1959,
+                        9.99);
+                Superhero super2 = new Superhero(
+                        "DJ Blyatman",
+                        "Stanislav Bodkovich",
+                        "Russian Hardbass",
+                        1993,
+                        420);
+                Superhero super3 = new Superhero(
+                        "Johnny Bravo",
+                        "John Bravo",
+                        "Tiltproof",
+                        1970,
+                        500);
+                Superhero super4 = new Superhero(
+                        "Bodega Bent",
+                        "Bent Børge Bumsen",
+                        "Kan drikke 80 øl på i hvert fald et par timer",
+                        1954,
+                        14);
+                database.addRandomHero(super1);
+                database.addRandomHero(super2);
+                database.addRandomHero(super3);
+                database.addRandomHero(super4);
+
+            }
+            //Søg efter Superhelte i Databasen
+            if (input == 5) {
+                System.out.println("Indtast navnet på den superhelt du vil finde");
+                String søgning = scanner.next();
+                System.out.println(database.findSuperhero(søgning));
+                System.out.println("Vil du tilbage til menuen? (y/n)");
+                kør = scanner.next();
+
+            }
+            //Rediger en Superhelt
+            if (input == 6){
+                System.out.println("Indtast de/den superhelt, som du vil redigere");
+                String brugerInput = scanner.nextLine();
+
+                // Find person(er)
+                ArrayList<Superhero> søgeResultat = database.findSuperhero(brugerInput);
+                Superhero superheroEditor = null;
+
+                // Søgning finder ingen personer
+                if (søgeResultat.isEmpty()) {
+                    System.out.println("Der findes ingen personer der opfylder søgekriterium");
+
+                } else if (søgeResultat.size() > 1) {
+                    // Vælg en person i søgeresultat med flere personer
+                    System.out.println("Vælg person");
+                    int tæller = 1;
+                    for (Superhero person : søgeResultat) {
+                        System.out.println(tæller++ + ". " +
+                                person.getSuperName() + " " +
+                                person.getCivilName() + " " +
+                                person.getSpecialPower() + " " +
+                                person.getCreationYear() + " " +
+                                person.getPowerLevel());
+                    }
+                    int heroChoice = scanner.nextInt();
+                    scanner.nextLine(); // Håndterer Scanner Bug
+                    superheroEditor = søgeResultat.get(heroChoice - 1);
+                }
+                //Søgning finder én person
+                else {
+                    superheroEditor = søgeResultat.get(0);
+                }
+
+                // Redigering af valgte personer
+                if (superheroEditor != null) {
+                    System.out.println("Rediger personinformation. Tryk ENTER hvis information ikke skal redigeres.");
+                    String nyVærdi;
+                    System.out.println("Supernavn: " + superheroEditor.getSuperName());
+                    nyVærdi = scanner.nextLine();
+                    if (!nyVærdi.isEmpty()) {
+                        superheroEditor.setSuperName(nyVærdi);
+                    }
+                    System.out.println("Civil navn: " + superheroEditor.getCivilName());
+                    nyVærdi = scanner.nextLine();
+                    if (!nyVærdi.isEmpty()) {
+                        superheroEditor.setCivilName(nyVærdi);
+                    }
+                    System.out.println("Specielle evner: " + superheroEditor.getSpecialPower());
+                    nyVærdi = scanner.nextLine();
+                    if (!nyVærdi.isEmpty()) {
+                        superheroEditor.setSpecialPower(nyVærdi);
+                    }
+                    System.out.println("Skabelsesår: " + superheroEditor.getCreationYear());
+                    nyVærdi = scanner.nextLine();
+                    if (!nyVærdi.isEmpty()) {
+                        superheroEditor.setCreationYear(Integer.parseInt(nyVærdi));
+                    }
+                    System.out.println("Power level: " + superheroEditor.getPowerLevel());
+                    nyVærdi = scanner.nextLine();
+                    if (!nyVærdi.isEmpty()) {
+                        superheroEditor.setPowerLevel(Double.parseDouble(nyVærdi));
+                    }
+                    System.out.println(superheroEditor + " er opdateret.");
+                }
+            }
+
+
+
+            //Slut programmet
+
+            if (input == 9) {
+                System.out.println("Tak for i dag - programmet lukker ned nu");
+                System.exit(0);
+
+
+            }
+        }
+
+    }
+    public void printStartMessage(){
+        System.out.println("Velkommen til MySuperheroes");
+    }
 }
+
+
