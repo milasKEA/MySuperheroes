@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9b24205-4ade-444e-954a-994a2aa204fd" name="Changes" comment="Search function updated - provides details of Heroes when searched">
+    <list default="true" id="f9b24205-4ade-444e-954a-994a2aa204fd" name="Changes" comment="Users can now edit Superheroes">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Superhero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Superhero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface.java" afterDir="false" />
+    </list>
+    <list id="2e419fc5-0f37-424b-ba8f-063407624fe5" name="Changes by tolan" comment="">
       <change beforePath="$PROJECT_DIR$/src/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +27,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/UserInterface.java">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="2" changelist="2e419fc5-0f37-424b-ba8f-063407624fe5" />
+        <range start1="16" end1="16" start2="17" end2="18" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="19" end1="21" start2="21" end2="25" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="22" end1="33" start2="26" end2="45" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="34" end1="36" start2="46" end2="48" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="37" end1="38" start2="49" end2="50" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="39" end1="78" start2="51" end2="91" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="79" end1="87" start2="92" end2="100" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="88" end1="93" start2="101" end2="106" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="94" end1="97" start2="107" end2="110" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="98" end1="153" start2="111" end2="188" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="154" end1="157" start2="189" end2="189" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="158" end1="163" start2="190" end2="195" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="164" end1="164" start2="196" end2="199" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="166" end1="166" start2="201" end2="202" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+        <range start1="167" end1="174" start2="203" end2="210" changelist="f9b24205-4ade-444e-954a-994a2aa204fd" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -40,6 +63,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/milas/IdeaProjects/Playlist/src/Main.java",
     "node.js.detected.package.eslint": "true",
@@ -61,7 +85,8 @@
       <workItem from="1694435837656" duration="8411000" />
       <workItem from="1694468180939" duration="6770000" />
       <workItem from="1694520372955" duration="9038000" />
-      <workItem from="1694677217069" duration="14531000" />
+      <workItem from="1694677217069" duration="15016000" />
+      <workItem from="1695034028127" duration="10982000" />
     </task>
     <task id="LOCAL-00001" summary="First (actual second) commit">
       <option name="closed" value="true" />
@@ -87,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694762736742</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Users can now edit Superheroes">
+      <option name="closed" value="true" />
+      <created>1694768712986</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694768712986</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,7 +130,8 @@
     <MESSAGE value="First (actual second) commit" />
     <MESSAGE value="Search function added - Start message edited" />
     <MESSAGE value="Search function updated - provides details of Heroes when searched" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search function updated - provides details of Heroes when searched" />
+    <MESSAGE value="Users can now edit Superheroes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Users can now edit Superheroes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -110,6 +144,16 @@
           <properties class="java.util.InputMismatchException" package="java.util" />
           <option name="timeStamp" value="4" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/UserInterface.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/UserInterface.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
